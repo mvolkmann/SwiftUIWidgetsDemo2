@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  SwiftUIWidgetsDemo2
-//
-//  Created by Mark Volkmann on 9/10/22.
-//
-
 import SwiftUI
 
 struct ContentView: View {
