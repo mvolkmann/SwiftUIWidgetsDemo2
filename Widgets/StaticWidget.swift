@@ -1,6 +1,7 @@
-import WidgetKit
+import CoreLocation
 import SwiftUI
-import Intents
+import WeatherKit
+import WidgetKit
 
 struct StaticProvider: TimelineProvider {
     typealias Entry = WeatherEntry
@@ -27,24 +28,35 @@ struct StaticProvider: TimelineProvider {
         in context: Context,
         completion: @escaping (Timeline<Entry>) -> ()
     ) {
-        // TODO: Use WeatherKit to get real data.
-        let now = Date()
-        let entries: [WeatherEntry] = [
-            WeatherEntry(
-                date: now,
-                city: "Emerald Isle",
-                temperature: 62.4,
-                windSpeed: 5.7
-            )
-        ]
+        let weatherService = WeatherService()
+        let location = CLLocation(latitude: 38.71013, longitude: -90.59503)
+        Task {
+            do {
+                print("getting weather data")
+                let weather = try await weatherService.weather(for: location)
+                print("got weather data")
+                let current = weather.currentWeather
+                let now = Date()
+                let entries: [WeatherEntry] = [
+                    WeatherEntry(
+                        date: now,
+                        city: "Emerald Isle",
+                        temperature: current.temperature.value,
+                        windSpeed: current.wind.speed.value
+                    )
+                ]
 
-        // iOS will likely not update more frequently than once
-        // every 15 minutes.  The widget is also updated every
-        // time the chart displayed in the app is updated.
-        // See the updateWidgets method in HealthChartView.swift.
-        let later = now.addingTimeInterval(15 * 60) // seconds
-        let timeline = Timeline(entries: entries, policy: .after(later))
-        completion(timeline)
+                // iOS will likely not update more frequently than once
+                // every 15 minutes.  The widget is also updated every
+                // time the chart displayed in the app is updated.
+                // See the updateWidgets method in HealthChartView.swift.
+                let later = now.addingTimeInterval(15 * 60) // seconds
+                let timeline = Timeline(entries: entries, policy: .after(later))
+                completion(timeline)
+            } catch {
+                print("StaticProvider.getTimeline: error =", error)
+            }
+        }
     }
 }
 

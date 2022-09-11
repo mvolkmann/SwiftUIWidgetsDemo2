@@ -20,6 +20,7 @@
 		1A6DECA728CD264A0096D528 /* WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1A6DEC9628CD26480096D528 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1A6DECAE28CD27DD0096D528 /* ConfigurableWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DECAC28CD27D90096D528 /* ConfigurableWidget.swift */; };
 		1A6DECB128CD2DC60096D528 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DECAF28CD2D650096D528 /* DoubleExtension.swift */; };
+		1AAE045728CD602000EA4FCE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAE045628CD602000EA4FCE /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,9 @@
 		1A6DECA228CD264A0096D528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A6DECAC28CD27D90096D528 /* ConfigurableWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableWidget.swift; sourceTree = "<group>"; };
 		1A6DECAF28CD2D650096D528 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		1A6DECB228CD3BB90096D528 /* WidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetsExtension.entitlements; sourceTree = "<group>"; };
+		1A6DECB328CD4D660096D528 /* SwiftUIWidgetsDemo2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUIWidgetsDemo2.entitlements; sourceTree = "<group>"; };
+		1AAE045628CD602000EA4FCE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		1A6DEC7628CD23880096D528 = {
 			isa = PBXGroup;
 			children = (
+				1A6DECB228CD3BB90096D528 /* WidgetsExtension.entitlements */,
 				1A6DEC8128CD23880096D528 /* SwiftUIWidgetsDemo2 */,
 				1A6DEC9C28CD26490096D528 /* Widgets */,
 				1A6DEC9728CD26480096D528 /* Frameworks */,
@@ -105,10 +110,12 @@
 		1A6DEC8128CD23880096D528 /* SwiftUIWidgetsDemo2 */ = {
 			isa = PBXGroup;
 			children = (
+				1A6DECB328CD4D660096D528 /* SwiftUIWidgetsDemo2.entitlements */,
 				1A6DEC8228CD23880096D528 /* SwiftUIWidgetsDemo2App.swift */,
 				1A6DEC8428CD23880096D528 /* ContentView.swift */,
 				1A6DEC8628CD23890096D528 /* Assets.xcassets */,
 				1A6DEC8828CD23890096D528 /* Preview Content */,
+				1AAE045628CD602000EA4FCE /* LocationManager.swift */,
 			);
 			path = SwiftUIWidgetsDemo2;
 			sourceTree = "<group>";
@@ -244,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AAE045728CD602000EA4FCE /* LocationManager.swift in Sources */,
 				1A6DEC8528CD23880096D528 /* ContentView.swift in Sources */,
 				1A6DECA428CD264A0096D528 /* Widgets.intentdefinition in Sources */,
 				1A6DEC8328CD23880096D528 /* SwiftUIWidgetsDemo2App.swift in Sources */,
@@ -392,12 +400,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIWidgetsDemo2/SwiftUIWidgetsDemo2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIWidgetsDemo2/Preview Content\"";
 				DEVELOPMENT_TEAM = 4BG3523GAZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to know the weather data to fetch.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to know the weather data to fetch.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -422,12 +433,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIWidgetsDemo2/SwiftUIWidgetsDemo2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIWidgetsDemo2/Preview Content\"";
 				DEVELOPMENT_TEAM = 4BG3523GAZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to know the weather data to fetch.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to know the weather data to fetch.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -451,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4BG3523GAZ;
@@ -478,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4BG3523GAZ;
